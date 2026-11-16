@@ -1,0 +1,22 @@
+GET THE PLUGIN WITHOUT INSTALLING ANYTHING
+===========================================
+
+1. Go to github.com and make a free account (or log in).
+2. Click the "+" at the top right -> "New repository".
+   Name it VioletTune, leave everything else, click "Create repository".
+3. Click "uploading an existing file".
+4. Unzip VioletTune.zip, then drag EVERYTHING inside the VioletTune folder
+   (Source, .github, CMakeLists.txt) into the browser page.
+   Make sure the ".github" folder is included.
+5. Click "Commit changes".
+6. Click the "Actions" tab at the top. A build starts by itself
+   (yellow dot = building, green check = done, takes ~5 minutes).
+7. Click the finished build, scroll to "Artifacts" at the bottom,
+   click "VioletTune-VST3" to download a zip.
+8. Unzip it. Copy the "VioletTune.vst3" FOLDER into:
+      C:\Program Files\Common Files\VST3
+9. Open FL Studio -> Options -> Manage plugins -> "Find plugins".
+   Add VioletTune to a vocal channel's effect slot.
+
+If the build shows a red X, click it, copy the error text,
+and paste it to me. I'll fix the code.
