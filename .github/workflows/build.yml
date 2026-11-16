@@ -1,0 +1,26 @@
+name: Build VioletTune (Windows VST3)
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Get JUCE
+        run: git clone --depth 1 --branch 8.0.6 https://github.com/juce-framework/JUCE.git JUCE
+
+      - name: Configure
+        run: cmake -B build -DCMAKE_BUILD_TYPE=Release
+
+      - name: Build
+        run: cmake --build build --config Release
+
+      - name: Upload plugin
+        uses: actions/upload-artifact@v4
+        with:
+          name: VioletTune-VST3
+          path: build/VioletTune_artefacts/Release/VST3/
